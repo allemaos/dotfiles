@@ -25,6 +25,6 @@ backup ~/bin/ $tmp
 
 NOW=$(date +"%Y%m%d%H%M")
 
-back="$tmp/backup"
+back="$tmp-backup"
 if [ ! -d "$back" ]; then mkdir "$back"; fi
 tar cvf "$back/dotfiles-$NOW.tar.gz" $tmp
