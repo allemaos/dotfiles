@@ -16,7 +16,7 @@ function backup() {
 
 backup ~/.bashrc $tmp
 backup ~/.bash_profile $tmp
-bsckup ~/.gitconfig $tmp
+backup ~/.gitconfig $tmp
 backup ~/.gitignore_global $tmp
 backup ~/.vimrc $tmp
 backup ~/.vim/ $tmp
