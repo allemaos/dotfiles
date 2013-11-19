@@ -13,5 +13,16 @@ function backup() {
 	fi
 }
 
+backup ~/.bashrc $tmp
+backup ~/.bash_profile $tmp
+bsckup ~/.gitconfig $tmp
+backup ~/.gitignore_global $tmp
+backup ~/.vimrc $tmp
+backup ~/.vim/ $tmp
+backup ~/bin/ $tmp
 
+NOW=$(date +"%Y-%m-%d-%T")
+
+if [ ! -d backup ]; then mkdir backup; fi
+tar cvf ../backup/dotfiles-$NOW.tar.gz $tmp
 
