@@ -1,5 +1,6 @@
 #!/bin/bash
 
+$BIN
 $tmp=/tmp/dotfiles
 
 function backup() {
@@ -21,8 +22,9 @@ backup ~/.vimrc $tmp
 backup ~/.vim/ $tmp
 backup ~/bin/ $tmp
 
-NOW=$(date +"%Y-%m-%d-%T")
 
-if [ ! -d backup ]; then mkdir backup; fi
-tar cvf ../backup/dotfiles-$NOW.tar.gz $tmp
+NOW=$(date +"%Y%m%d%H%M")
 
+back="$tmp/backup"
+if [ ! -d "$back" ]; then mkdir "$back"; fi
+tar cvf "$back/dotfiles-$NOW.tar.gz" $tmp
