@@ -27,4 +27,6 @@ NOW=$(date +"%Y%m%d%H%M")
 
 back="$tmp-backup"
 if [ ! -d "$back" ]; then mkdir "$back"; fi
-tar cvf "$back/dotfiles-$NOW.tar.gz" $tmp
+tar cf "$back/dotfiles-$NOW.tar.gz" $tmp
+
+echo "You can find previous backup dotfiles in $back"
