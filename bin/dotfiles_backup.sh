@@ -15,7 +15,7 @@ function backup() {
 	fi
 }
 
-ls -al | grep -v "\.$" | ggrep -v "\.git" | rep -v "backup" | grep -v "bin"  | awk '{print "backup:"$9} {backup "~/"$9 $tmp}'
+ls -al --ignore=".git" | tail -n +2 | grep -v "\.$" | grep -v "backup" | grep -v "bin"  | awk '{print "backup:"$9} {backup "~/"$9 $tmp}'
 
 #backup ~/.bashrc $tmp
 #backup ~/.bash_profile $tmp
