@@ -15,6 +15,8 @@ function backup() {
 	fi
 }
 
+ls -al | grep -v "\.$" | grep -v "backup" | grep -v "bin"  | awk '{print "backup:"$9} {backup "~/"$9 $tmp}'
+
 backup ~/.bashrc $tmp
 backup ~/.bash_profile $tmp
 backup ~/.gitconfig $tmp
