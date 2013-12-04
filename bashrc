@@ -80,3 +80,12 @@ export PATH=$PATH:$M2_HOME/bin:$ANT_HOME/bin
 
 
 
+# make and change to a directory
+md () { mkdir -p "$1" && cd "$1"; }
+
+
+# quick plot of numbers on stdin. Can also pass plot params.
+# E.G: seq 1000 | sed 's/.*/s(&)/' | bc -l | plot linecolor 2
+plot() { { echo 'plot "-"' "$@"; cat; } | gnuplot -persist; }
+
+
