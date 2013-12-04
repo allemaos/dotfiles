@@ -89,3 +89,15 @@ md () { mkdir -p "$1" && cd "$1"; }
 plot() { { echo 'plot "-"' "$@"; cat; } | gnuplot -persist; }
 
 
+GITPROMPT1=~/apps/bash-git-prompt/gitprompt.sh
+#GITPROMPT2=~/apps/git-prompt/gitprompt.sh
+for GITPROMPT in $GITPROMPT1; do 
+if [ -f ${GITPROMPT} ]; then
+	source ${GITPROMPT}
+fi; done
+
+# Key bindings, up/down arrow searches through history
+bind '"\e[A": history-search-backward' #UpArrowKEY
+bind '"\e[B": history-search-forward' #DownArrowKEY
+bind '"\eOA": history-search-backward'
+bind '"\eOB": history-search-forward'
