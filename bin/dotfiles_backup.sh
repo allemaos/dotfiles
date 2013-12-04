@@ -15,15 +15,8 @@ function backup() {
 	fi
 }
 
+#backup sequetially all dotted files without .git backup and bin dir's
 ls -al --ignore=".git" | tail -n +2 | grep -v "\.$" | grep -v "backup" | grep -v "bin"  | awk '{print "backup:"$9} {backup "~/"$9 $tmp}'
-
-#backup ~/.bashrc $tmp
-#backup ~/.bash_profile $tmp
-#backup ~/.gitconfig $tmp
-#backup ~/.gitignore_global $tmp
-#backup ~/.vimrc $tmp
-#backup ~/.vim/ $tmp
-#backup ~/bin/ $tmp
 
 
 NOW=$(date +"%Y%m%d%H%M")
