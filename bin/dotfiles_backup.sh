@@ -1,7 +1,8 @@
 #!/bin/bash
 
 $BIN
-$tmp=/tmp/dotfiles
+tmp=/tmp/dotfiles
+mkdir $tmp
 
 function backup() {
 	item=$1
