@@ -1,4 +1,4 @@
 dotfiles
 ========
 
-My dotfiles for my sh shell 
+This is dotfiles for my sh shell 
