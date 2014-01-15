@@ -48,6 +48,13 @@ alias update-grub='sudo grub2-mkconfig -o /boot/grub2/grub.cfg'
 alias java-alternative='sudo alternatives --config java ; source .bashrc'
 alias gg='git log --oneline --abbrev-commit --all --graph --decorate --date=relative --color'
 
+#alias for virtualbox from http://www.virtualbox.org/manual/ch08.html
+alias vboxlist='VBoxManage list vms'
+alias vboxlistrunning='VBoxManage list runningvms'
+alias vboxlistextpacks='VBoxManage list extpacks'
+alias vboxstartvm='VBoxManage startvm'
+alias vboxstartvmOracle11gR2WD='VBoxManage startvm --type headless 613f3049-63c9-48cb-adda-916467e8f477'
+
 # Source global definitions
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
