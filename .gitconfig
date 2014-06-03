@@ -28,7 +28,7 @@
  	rl	=	reflog --date=relative 
  	rem	=	remote -v
 [diff]
-	external = git_diff_vimdiff
+	external = git_meld #git_diff_vimdiff
 
 [merge]
 	tool = vimdiff
