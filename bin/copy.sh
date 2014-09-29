@@ -10,11 +10,13 @@ src=$1
 des=$2
 prompt=$3
 
-mkdir $tmp
+#mkdir $tmp
 
 function my_copy() {
 	item=$1
 	tmp=$2
+
+	echo $1
 	if [ -f $item -o -d $item ]; then
 		if [ ! -d $tmp ]; then mkdir $tmp; fi
 		cp -r $item $tmp
@@ -22,7 +24,9 @@ function my_copy() {
 		echo "$item doesn't exist"
 	fi
 }
-
+echo "SRC: "$src
+echo "DES: "$des
+echo "prompt: " $prompt
 #backup sequetially all dotted files without .git backup and bin dir's
-ls -al --ignore=".git" | tail -n +2 | grep -v "\.$" | grep -v "backup" | grep -v "bin"  | awk '{print "$prompt:"$9} {my_copy "$src/"$9 $des}'
+ls -al --ignore=".git" | tail -n +2 | grep -v "\.$" | grep -v "backup" | grep -v "bin"  | awk '{print "$prompt:"$9} {my_copy "$src:$9" $des}'
 
