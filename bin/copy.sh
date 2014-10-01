@@ -29,4 +29,5 @@ echo "DES: "$des
 echo "prompt: " $prompt
 #backup sequetially all dotted files without .git backup and bin dir's
 ls -al --ignore=".git" | tail -n +2 | grep -v "\.$" | grep -v "backup" | grep -v "bin"  | awk '{print "$prompt:"$9} {my_copy "$src:$9" $des}'
+#ls -al --ignore=".git" | tail -n +2 | grep -v "\.$" | grep -v "backup" | grep -v "bin"  | awk '{my_copy "$src:"$9 $des}'
 
