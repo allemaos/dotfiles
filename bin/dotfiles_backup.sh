@@ -15,8 +15,8 @@ mkdir $tmp/$dir; ls -al $dir | tail -n +2 | grep -v "\.$" | awk '{print $NF}' | 
 
 back="./backup"
 if [ ! -d "$back" ]; then mkdir "$back"; fi
-tar -zcf "$back/dotfiles-$NOW.tar.gz" $tmp
-#rm -rf $tmp
+tar cvzf "$back/dotfiles-$NOW.tar.gz" $tmp
+rm -rf $tmp
 
 
 echo "You can find previous backup dotfiles in $back"
